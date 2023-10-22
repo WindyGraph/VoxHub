@@ -1,3 +1,13 @@
+# VoxHub
+
+This project is created for learning purposes, by following the online course: 
+
+[Fullstack Discord Clone](https://www.codewithantonio.com/projects/team-chat-platform)
+
+Created by [AntonioErdeljac](https://github.com/AntonioErdeljac)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
