@@ -3,8 +3,10 @@ import type { Metadata } from 'next'
 import { font } from '@/lib/font'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
-import { ThemeProvider } from '@/components/providers/theme-provider'
+
 import { cn } from '@/lib/utils'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+import { ModalProvider } from '@/components/providers/modal-provider'
 
 // const font = Open_Sans({
 //   subsets: ['latin'],
@@ -33,6 +35,7 @@ export default function RootLayout({
             enableSystem={true}
             storageKey='voxhub-theme'
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
