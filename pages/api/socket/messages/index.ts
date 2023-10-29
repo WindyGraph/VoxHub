@@ -48,7 +48,7 @@ export default async function handler(
     })
 
     if (!server) {
-      return res.status(404).json({ message: 'Server not found' })
+      return res.status(404).json({ error: 'Server not found' })
     }
 
     const channel = await db.channel.findFirst({
@@ -59,7 +59,7 @@ export default async function handler(
     })
 
     if (!channel) {
-      return res.status(404).json({ message: 'Channel not found' })
+      return res.status(404).json({ error: 'Channel not found' })
     }
 
     const member = server.members.find(
@@ -67,7 +67,7 @@ export default async function handler(
     )
 
     if (!member) {
-      return res.status(404).json({ message: 'Member not found' })
+      return res.status(404).json({ error: 'Member not found' })
     }
 
     const message = await db.message.create({
@@ -90,7 +90,7 @@ export default async function handler(
 
     res?.socket?.server?.io?.emit(channelKey, message)
 
-    return res.status(200).json({ message })
+    return res.status(200).json(message)
   } catch (error) {
     console.log('[MESSAGES_POST]', error)
     return res.status(500).json({ error: 'Internal Server Error' })
