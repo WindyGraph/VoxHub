@@ -88,6 +88,7 @@ export const CreateServerModal = () => {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className='space-y-8'
+            autoComplete='off'
           >
             <div className='space-y-8 px-6'>
               <div className='flex items-center justify-center text-center'>

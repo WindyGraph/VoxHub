@@ -109,6 +109,7 @@ export const EditChannelModal = () => {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className='space-y-8'
+            autoComplete='off'
           >
             <div className='space-y-8 px-6'>
               <FormField
