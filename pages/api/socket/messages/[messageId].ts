@@ -9,7 +9,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponseServerIo
 ) {
-  if (req.method !== 'DETELE' && req.method !== 'PATCH') {
+  if (req.method !== 'DELETE' && req.method !== 'PATCH') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
@@ -98,7 +98,7 @@ export default async function handler(
       return res.status(401).json({ error: 'Unauthorized' })
     }
 
-    if (req.method === 'DETELE') {
+    if (req.method === 'DELETE') {
       message = await db.message.update({
         where: {
           id: messageId as string,
