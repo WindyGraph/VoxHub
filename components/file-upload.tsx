@@ -16,8 +16,7 @@ interface FileUploadProps {
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
   const fileType = value?.split('.').pop()
 
-  // if (value && fileType !== 'pdf') {
-  if (value && endpoint === 'serverImage') {
+  if (value && fileType !== 'pdf') {
     return (
       <div className='relative h-20 w-20'>
         <Image
@@ -37,8 +36,7 @@ export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
     )
   }
 
-  // if (value && fileType === 'pdf') {
-  if (value && endpoint === 'messageFile') {
+  if (value && fileType === 'pdf') {
     return (
       <div className='relative flex items-center p-2 mt-2 rounded-md bg-background/10'>
         <FileIcon className='h-10 w-10 fill-indigo-200 stroke-indigo-400' />
